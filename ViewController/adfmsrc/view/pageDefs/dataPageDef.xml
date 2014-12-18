@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="dataPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="sayHi_Return" IsQueriable="false"
+                IsUpdateable="0" DefaultValue="${bindings.sayHi.result}"/>
+      <variable Type="java.lang.String" Name="sayHi_input" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="sayHi" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="sayHi" IsViewObjectMethod="false"
+                  DataControl="Hello" InstanceName="Hello.dataProvider"
+                  ReturnName="data.Hello.methodResults.sayHi_Hello_dataProvider_sayHi_result">
+      <NamedData NDName="input" NDType="java.lang.String"
+                 NDValue="${bindings.sayHi_input}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="input">
+      <AttrNames>
+        <Item Value="sayHi_input"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

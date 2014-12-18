@@ -1,0 +1,9 @@
+.data/
+temp/
+classes/
+cwallet.sso.lck
+
+**/.data/**
+**/temp/
+**/classes/
+**/cwallet.sso.lck
